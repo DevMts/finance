@@ -1,43 +1,16 @@
-import { Button } from "@/components/Button";
-import { Input } from "@/components/Input";
 import { fonts } from "@/theme/fonts";
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { router } from "expo-router";
+import { Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      className="flex-1 justify-center px-8"
-    >
-
-      <View className="mb-12">
-        <Text
-          style={{ fontFamily: fonts.manrope, fontSize: 36 }}
-          className="font-bold text-black"
-        >
-          Bem-vindo de volta
-        </Text>
-
-        <Text
-          style={{ fontFamily: fonts.manrope }}
-          className="mt-2 text-gray-500 "
-        >
-          Insira seus dados para acessar sua conta
-        </Text>
-      </View>
-      <View>
-        <Input label="E-mail" />
-        <Input label="Senha" secureTextEntry />
-        <Text className="mt-4 mb-[3.75rem] text-sm  self-end" style={{ fontFamily: fonts.manrope }}>
-          Esqueci minha senha
-        </Text>
-        <Button title="Entrar" />
-        <Text className="mt-10 text-sm self-center" style={{ fontFamily: fonts.manrope }}>
-          Não tem uma conta? <Link href="/sign-up" >
-            <Text className="font-bold text-black">Cadastre-se</Text>
-          </Link>
-        </Text>
-      </View>
+    <View className="flex-1 justify-center px-8">
+      <Text className="text-center text-2xl font-bold" style={{ fontFamily: fonts.manrope }}>
+        Finance App
+      </Text>
+      <TouchableOpacity className="mt-4 self-center bg-blue-500 px-4 py-2 rounded" onPress={() => { router.push('/sign-in') }}>
+        <Text className="text-white" style={{ fontFamily: fonts.manrope }}>Get Started</Text>
+      </TouchableOpacity>
     </View>
   );
 }

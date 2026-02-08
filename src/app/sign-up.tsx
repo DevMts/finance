@@ -4,38 +4,35 @@ import { fonts } from "@/theme/fonts";
 import { Link } from "expo-router";
 import { Text, View } from "react-native";
 
-export default function Index() {
+export default function SignUp() {
   return (
-    <View
-      className="flex-1 justify-center px-8"
-    >
-
+    <View className="flex-1 justify-center px-8">
       <View className="mb-12">
         <Text
           style={{ fontFamily: fonts.manrope, fontSize: 36 }}
           className="font-bold text-black"
         >
-          Bem-vindo de volta
+          Crie sua conta
         </Text>
 
         <Text
           style={{ fontFamily: fonts.manrope }}
-          className="mt-2 text-gray-500 "
+          className="mt-2 text-gray-500"
         >
-          Insira seus dados para acessar sua conta
+          Insira seus dados para se cadastrar
         </Text>
       </View>
       <View>
-        <Input label="E-mail" />
+        <Input label="Nome" />
+        <Input label="E-mail" keyboardType="email-address" />
         <Input label="Senha" secureTextEntry />
-        <Text className="mt-4 mb-[3.75rem] text-sm  self-end" style={{ fontFamily: fonts.manrope }}>
-          Esqueci minha senha
-        </Text>
-        <Button title="Entrar" />
+
+        <View className="mt-12">
+          <Button title="Cadastrar" />
+        </View>
+
         <Text className="mt-10 text-sm self-center" style={{ fontFamily: fonts.manrope }}>
-          Não tem uma conta? <Link href="/sign-up" >
-            <Text className="font-bold text-black">Cadastre-se</Text>
-          </Link>
+          Já tem uma conta? <Link href="/" className="font-bold text-black">Entrar</Link>
         </Text>
       </View>
     </View>

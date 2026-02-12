@@ -1,5 +1,5 @@
 import { Tabs } from 'expo-router';
-import { Home, PieChart } from 'lucide-react-native';
+import { History, Home, PieChart, User } from 'lucide-react-native';
 import React from 'react';
 
 export default function TabsLayout() {
@@ -34,14 +34,14 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => <Home color={color} size={20} />,
         }}
       />
-      {/* <Tabs.Screen
-        name="stats"
+      <Tabs.Screen
+        name="history"
         options={{
-          title: 'Stats',
-          tabBarLabel: 'Stats',
-          tabBarIcon: ({ color }) => <BarChart3 color={color} size={24} />,
+          title: 'History',
+          tabBarLabel: 'History',
+          tabBarIcon: ({ color }) => <History color={color} size={24} />,
         }}
-      /> */}
+      />
       <Tabs.Screen
         name="analytics"
         options={{
@@ -50,14 +50,14 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => <PieChart color={color} size={24} />,
         }}
       />
-      {/* <Tabs.Screen
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => <User color={color} size={24} />,
         }}
-      /> */}
+      />
     </Tabs>
   );
 }
